@@ -1,0 +1,26 @@
+
+import random
+
+def jeu_de_devinette():
+    nombre_secret = random.randint(1, 10)
+    tentatives = 0
+
+    print("Bienvenue dans le jeu de devinette !")
+    print("Je pense à un nombre entre 1 et 10.")
+
+    while True:
+        guess = int(input("Devinez le nombre : "))
+        tentatives += 1
+
+        if guess == nombre_secret:
+            print(f"Félicitations ! Vous avez deviné le nombre en {tentatives} tentatives.")
+            break
+        elif guess < nombre_secret:
+            print("Le nombre est plus grand. Essayez encore.")
+        else:
+            print("Le nombre est plus petit. Essayez encore.")
+
+if __name__ == "__main__":
+    jeu_de_devinette()
+
+
